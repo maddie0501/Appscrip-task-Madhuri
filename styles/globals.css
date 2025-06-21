@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
+  padding: 40px 100px;
 }
 
 .header-left {
@@ -126,6 +126,7 @@
 }
 
 .close-btn {
+  display: none;
   background: none;
   border: none;
   font-size: 24px;
@@ -279,7 +280,7 @@ input[type="checkbox"] + label {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  width: 220px;
+  width: 272px;
   border-radius: 8px;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -358,6 +359,12 @@ input[type="checkbox"] + label {
   grid-template-columns: repeat(3, 1fr);
 }
 
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* Medium screens */
 @media (max-width: 1024px) {
   .product-grid,
@@ -385,15 +392,22 @@ input[type="checkbox"] + label {
     gap: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
     box-sizing: border-box;
+    max-width: 1280px;
   }
 
   .product-card {
     margin: 0 !important;
-    width: 100% !important;
     box-sizing: border-box;
   }
+  .product-img {
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 240px;
+    display: flex
+;
+}
 }
 /* footer section */
 
@@ -514,6 +528,13 @@ input[type="checkbox"] + label {
     display: none;
   }
 
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px ;
+}
+
   .header-center {
     display: none;
   }
@@ -536,6 +557,18 @@ input[type="checkbox"] + label {
   .desktop-icons {
     display: none;
   }
+  .brand-text {
+    letter-spacing: 1px;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 100%;
+    display: flex
+;
+}
 
   .hero-section {
     display: flex;
@@ -548,7 +581,7 @@ input[type="checkbox"] + label {
   .hero-header {
     font-family: Simplon Norm;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 22px;
     line-height: 100%;
     letter-spacing: 1px;
     text-align: center;
@@ -559,7 +592,7 @@ input[type="checkbox"] + label {
   .hero-description {
     font-family: Simplon Norm;
     font-weight: 200;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 40px;
     text-align: center;
   }
@@ -572,6 +605,8 @@ input[type="checkbox"] + label {
     border: 1px solid #ccc;
     font-weight: 800;
     width: 100%;
+    margin: 0;
+    padding: 10px;
   }
 
   .sort-selected {
@@ -621,6 +656,7 @@ input[type="checkbox"] + label {
     z-index: 1000;
   }
   .close-btn {
+    display: block;
     cursor: pointer;
     text-align: end;
     background: none;
@@ -629,9 +665,7 @@ input[type="checkbox"] + label {
     font-size: 24px;
   }
 
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
 
   .footer-accordion {
     display: block;

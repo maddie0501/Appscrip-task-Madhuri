@@ -17,7 +17,7 @@ export default function Home() {
         <meta name="description" content="Browse our products and find the best deals online!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      
+
       <div className="sticky">
         <p>Lorem ipsum dolor</p>
         <p>Lorem ipsum dolor</p>
@@ -33,9 +33,11 @@ export default function Home() {
 
         <div className="header-left">
           <Image src="/Logo.png" alt=" Logo" width={30} height={30} />
+
+
         </div>
         <h1 className="brand-text">LOGO</h1>
-
+        
         <div className="navbar-right">
           <Image src="/search-normal.png" alt="Search" width={20} height={20} />
           <Image src="/heart.png" alt="Wishlist" width={20} height={20} />
