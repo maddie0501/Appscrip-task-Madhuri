@@ -12,9 +12,12 @@ export default function Home() {
   const closeSidebar = () => setIsSidebarOpen(false);
   return (
     <>
-     <Head>
+      <Head>
         <title>Product Listing Page</title>
-        <meta name="description" content="Browse our products and find the best deals online!" />
+        <meta
+          name="description"
+          content="Browse our products and find the best deals online!"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -25,19 +28,16 @@ export default function Home() {
       </div>
 
       <div className="navbar">
-        <div className="hamburger" onClick={toggleSidebar}>
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
-        </div>
-
         <div className="header-left">
+          <div className="hamburger" onClick={toggleSidebar}>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+          </div>
           <Image src="/Logo.png" alt=" Logo" width={30} height={30} />
-
-
         </div>
         <h1 className="brand-text">LOGO</h1>
-        
+
         <div className="navbar-right">
           <Image src="/search-normal.png" alt="Search" width={20} height={20} />
           <Image src="/heart.png" alt="Wishlist" width={20} height={20} />

@@ -10,6 +10,9 @@ export default function ProductPage() {
   const [productData, setProductData] = useState([]);
   const closeSidebar = () => setSidebarOpen(false);
 
+  const [liked, setLiked] = useState(false);
+  const toggleLike = () => setLiked(!liked);
+
   const options = [
     "RECOMMENDED",
     "NEWEST",
@@ -93,7 +96,7 @@ export default function ProductPage() {
           </div>
 
           <div className="filter">
-            <h3 onClick={() => setSidebarOpen(!sidebarOpen)}>FILTER</h3>
+            <h4 onClick={() => setSidebarOpen(!sidebarOpen)}>FILTER</h4>
           </div>
 
           <div className="sort-dropdown">
@@ -178,23 +181,40 @@ function ProductCard({ title, image }) {
   return (
     <div className="product-card">
       <div className="product-img">
-        <Image src={image} alt={title} width={200} height={200} priority />
+        <Image
+          src={image}
+          alt={title}
+          width={200}
+          height={200}
+          priority
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </div>
 
-      <h4 className="product-title">{title}</h4>
+      <h3 className="product-title">{title}</h3>
 
       <div className="product-details">
         <p className="signin-text">
           Sign in or Create an account to see pricing
         </p>
-        <Image
-          src="/Heart.png"
-          alt="Like"
-          width={20}
-          height={20}
-          className="likes"
-          onClick={toggleLike}
-        />
+        <div onClick={toggleLike}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill={liked ? "red" : "none"}
+            viewBox="0 0 24 24"
+            stroke={liked ? "red" : "black"}
+            strokeWidth="2"
+            className="likes"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 21C12 21 5 13.5 5 9.5C5 6.42 7.42 4 10.5 4C12.04 4 13.54 4.81 14.25 6.08C14.96 4.81 16.46 4 18 4C21.08 4 23.5 6.42 23.5 9.5C23.5 13.5 16.5 21 16.5 21H12Z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
